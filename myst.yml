@@ -1,0 +1,124 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id:
+  title: Eletromagnetismo III
+  short_title: EletroUFCG
+  description: Curso de Eletromagnetismo no programa dew pós-graduação em Física na Universidade Federal de Campina Grande (UFCG).
+  keywords:
+    [
+      física,
+    ]
+  affiliations:
+    - id: UFCG
+      institution: Universidade Federal de Campina Grande
+  #      departament: Unidade Acadêmica de Física
+  authors:
+    - name: Luciano Barosi
+      email: lbarosi@df.ufcg.edu.br
+      affiliation:
+        - id: UFCG
+  github: https://github.com/barosil/EletroUFCG
+  license: CC-BY-4.0
+  open_access: true
+  exports:
+    - format: pdf
+    - template: book-theme
+    - output: exports/document.pdf
+  thumbnail: content/00_images/thumbnails/thumb.jpg
+
+  #binder:
+
+  numbering:
+    title: true
+    section: true
+    subsection: true
+    code: true
+    math: true
+    biografia:
+      enabled: true
+    contexto:
+      enabled: true
+    timeline:
+      enabled: true
+    definition:
+      enabled: true
+    theorem:
+      enabled: true
+    example:
+      enabled: true
+  exclude:
+    - "*QUADRO.*"
+
+  jupyter: 
+    binder: true
+
+  
+
+  requirements:
+    - binder/apt.txt
+    - binder/environment.yml
+    - binder/postBuild/
+    - binder/start
+
+  resources:
+    - src/*
+    - data/*
+
+
+ 
+  toc:
+    - file: content/01_frontmatter/cover.md
+    - title: Content
+      children:
+        - title: Frontmatter
+          children:
+            - file: content/01_frontmatter/about.md
+            - file: content/01_frontmatter/links.md
+        - title: Aulas
+          children:
+            - pattern: "content/02_lessons/*.*"
+        - title: Problemas
+          children:
+            - pattern: "content/03_problems/*.*"
+        - title: Backmatter
+          children:
+            - pattern: "content/03_backmatter/*.*"
+        # - title: Notebooks
+        #   children:
+        #     - file: content/04_notebooks/index.md
+        #     - pattern: "content/04_notebooks/*.ipynb"
+        # - title: Códigos
+        #   children:
+        #     - file: "content/05_api/index.md"
+        #     - pattern: "content/05_api/*.md"
+        
+
+
+
+
+site:
+  template: book-theme
+  domains:
+    - lbarosi.curve.space
+  options:
+    folders: true
+    style: _static/css/custom.css
+    #   favicon: favicon.ico
+    logo: content/00_images/UFCG.png
+    launch_buttons:
+      notebook_interface: "jupyterlab"  # ou "classic"
+      binderhub_url: "https://mybinder.org"
+      colab_url: ""
+      thebe: true
+  parts:
+    footer: content/01_frontmatter/footer.md
+  nav:
+    - title: Principal
+      url: /content/frontmatter/cover
+    - title: Links Uteis
+      url: /content/frontmatter/links
+    - title: Sobre este Livro
+      url: /content/frontmatter/about
+
+  

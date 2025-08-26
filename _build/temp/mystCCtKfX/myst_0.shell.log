@@ -1,0 +1,92 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "=pt_BR:en_US",
+	LC_ALL = (unset),
+	LC_CTYPE = "C.UTF-8",
+	LC_NUMERIC = "pt_BR.UTF-8",
+	LC_COLLATE = (unset),
+	LC_TIME = "pt_BR.UTF-8",
+	LC_MESSAGES = "=pt_BR",
+	LC_MONETARY = "pt_BR.UTF-8",
+	LC_ADDRESS = "pt_BR.UTF-8",
+	LC_IDENTIFICATION = "pt_BR.UTF-8",
+	LC_MEASUREMENT = "pt_BR.UTF-8",
+	LC_PAPER = "pt_BR.UTF-8",
+	LC_TELEPHONE = "pt_BR.UTF-8",
+	LC_NAME = "pt_BR.UTF-8",
+	LANG = "pt_BR.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("pt_BR.UTF-8").
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 27 Dec. 2024. Version 4.86a.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'xelatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "myst_0.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2026/dev/Arch Linux) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on myst_0.synctex.gz.Latexmk: Getting log file 'myst_0.log'
+Latexmk: Examining 'myst_0.fls'
+Latexmk: Examining 'myst_0.log'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'myst_0.xdv'
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Changed files or newly in use/created:
+  myst_0-content.frontmatter.about.aux
+  myst_0-content.frontmatter.links.aux
+  myst_0-content.problems.conjunto.aux
+  myst_0-content.problems.mathematical-background.aux
+  myst_0.aux
+  myst_0.out
+
+------------
+Run number 2 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "myst_0.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2026/dev/Arch Linux) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on myst_0.synctex.gz.Latexmk: Getting log file 'myst_0.log'
+Latexmk: Examining 'myst_0.fls'
+Latexmk: Examining 'myst_0.log'
+Latexmk: Log file says output to 'myst_0.xdv'
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Changed files or newly in use/created:
+  myst_0.xdv
+Category 'changed_source_rules':
+  xelatex
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "myst_0.pdf"  "myst_0.xdv"'
+------------
+myst_0.xdv -> myst_0.pdf
+[1][2][3][4][5][6][7][8][9][10][11]
+70968 bytes written
+Latexmk: Errors, in force_mode: so I tried finishing targets
+Collected error summary (may duplicate other messages):
+  xelatex: Command for 'xelatex' gave return code 1
+      Refer to 'myst_0.log' and/or above output for details
+
