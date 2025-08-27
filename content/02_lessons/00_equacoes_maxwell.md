@@ -9,7 +9,7 @@ I saw that it was great, greater and greatest ... I was determined to master the
 
 ::::
 
-:::{figure} ../00_images/02_lessons/00_maxwell.png
+:::{figure} ../00_images/02_lessons/00_maxwell.webp
 :name: fig-layout
 :align: center
 :width: 100%
@@ -130,7 +130,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{L}_{\text{gauge}} &= -\frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}*a - \frac{1}{4} W_{\mu\nu}^i W^{\mu\nu}*i - \frac{1}{4} B_{\mu\nu} B^{\mu\nu} \\
+\mathcal{L}_{\text{gauge}} &= -\frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a - \frac{1}{4} W_{\mu\nu}^i W^{\mu\nu}_i - \frac{1}{4} B_{\mu\nu} B^{\mu\nu} \\
 \mathcal{L}_{\text{fermions}} &= \sum_{\text{gerações}} \bar{\psi}_i i \gamma^\mu D_\mu \psi_i \\
 \mathcal{L}_{\text{Higgs}} &= (D_\mu \phi)^\dagger (D^\mu \phi) - V(\phi) \\
 \mathcal{L}_{\text{Yukawa}} &= - y_{ij} \bar{\psi}_i \phi \psi_j + \text{h.c.}

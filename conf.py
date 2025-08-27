@@ -88,9 +88,9 @@ html_theme = "sphinx_book_theme"
 templates_path = ["_static/templates"]
 html_static_path = ["_static"]
 
-html_css_files = [
-    "css/custom.css"  # sem _static/ aqui
-]
+# html_css_files = [
+#     "css/custom.css"  # sem _static/ aqui
+# ]
 
 html_context = {
     "default_mode": "dark",

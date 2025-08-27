@@ -21,11 +21,38 @@
 
 ## Geometria Diferencial
 
+:::{attention} Convenções Gerais
+
+- Métrica de Minkowsky:
+$$\eta_{\mu\nu} = \mathrm{diag}(+1, -1, -1, -1)$$
+- Sistema de Unidades: **SI**
+:::
+
+:::{attention}
+Vamos procurar ser consistentes com os índices vetoriais. Para vetores cartesianos isto não é relevante, mas para qualquer outra situação existe uma diferença importante.
+
+- Todos os **vetores** serão escritos com componentes com índice em cima.
+- O índice que rotula o elemento da base é embaixo.
+- Os coordenadas são vetores, tem índice em cima.
+- Derivadas tem uma coisa com índice em cima (a coordenada) na parte de baixo de uma fração e portanto tem índices embaixo.
+- Podemos subir ou abaixar os índices contraindo com a métrica.
+- No caso cartesiano a métrica é a identidade e portanto podemos subir e descer os índices livremente.
+- Vamos utilizar a **convenção da soma de Einstein**
+:::
+
+:::{prf:definition}**Convenção da Soma de Einstein**
+
+- Em uma expressão usando componentes de objetos multilineares (vetores, tensores...), sempre que um índice aperecer duas vezes subentende-seuma soma neste índice sobre o número de dimensões do objeto.
+- Embora existam expressões corretas com um índice repetido mais do que 2 vezes, este é um caso ultra-excepcional. Se você pensar em fazer isto, provavelmente tem um erro no seu cálculo.
+- Índices de soma são chamados de **índices mudos** e a letra que se usa para designá-los pode ser alterada livremente.
+- Igualdades devem ter os mesmos conjuntos de índices livres, independentemente dos índices mudos.
+:::
+
 ### Tensores Isotrópicos
 
 Considere o espaço $\mathbb{R}^3$ com coordenadas cartesianas $(x^1, x^2, x^3)$, denotamos por $\{e_i\},\, i=1,2,3$ os **vetores ortonormais**. Vamos definir alguns objetos.
 
-:::{definition} Delta de Kronecker
+:::{prf:definition} Delta de Kronecker
 
 $$
 \delta_{ij} =
@@ -35,8 +62,6 @@ $$
 \end{cases}
 $$
 :::
-
-:::{definition} Símbolo de Levi-Civita
 
 $$\epsilon_{ijk} =
 \begin{cases}

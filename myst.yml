@@ -25,7 +25,9 @@ project:
     - format: pdf
     - template: book-theme
     - output: exports/document.pdf
-  thumbnail: content/00_images/thumbnails/thumb.jpg
+  #thumbnail: content/00_images/thumbnails/thumb.jpg
+  bibliography:
+    - refs.bib
 
   #binder:
 
@@ -75,15 +77,18 @@ project:
           children:
             - file: content/01_frontmatter/about.md
             - file: content/01_frontmatter/links.md
-        - title: Aulas
+        - title: Tópicos
           children:
             - pattern: "content/02_lessons/*.*"
         - title: Problemas
           children:
             - pattern: "content/03_problems/*.*"
+        - title: Aplicações Computacionais
+          children:
+            - pattern: "content/04_notebooks/*.*"
         - title: Backmatter
           children:
-            - pattern: "content/03_backmatter/*.*"
+            - pattern: "content/05_backmatter/*.*"
         # - title: Notebooks
         #   children:
         #     - file: content/04_notebooks/index.md
@@ -103,7 +108,7 @@ site:
     - lbarosi.curve.space
   options:
     folders: true
-    style: _static/css/custom.css
+    #style: _static/css/custom.css
     #   favicon: favicon.ico
     logo: content/00_images/UFCG.png
     launch_buttons:
@@ -112,7 +117,7 @@ site:
       colab_url: ""
       thebe: true
   parts:
-    footer: content/01_frontmatter/footer.md
+    #footer: content/01_frontmatter/footer.md
   nav:
     - title: Principal
       url: /content/frontmatter/cover
@@ -120,5 +125,4 @@ site:
       url: /content/frontmatter/links
     - title: Sobre este Livro
       url: /content/frontmatter/about
-
   

@@ -13,17 +13,17 @@ Equações de Maxwell; Eletrostática e Magnetostática; Problemas de Condiçõe
 ```{admonition} Bibliografia
 :class: important
 
-- [notas de aula de David Tong - DAMTP/Cambridge](https://www.damtp.cam.ac.uk/user/tong/em.html)
+- [notas de aula de David Tong - DAMTP/Cambridge](https://www.damtp.cam.ac.uk/user/tong/em.html) {cite:p}`Tong2015`
     - Excelentes notas de aula disponíveis online. Usaremos alguns materiais de sua apresentação, em particular a parte sobre Eletromagnetismo e Relatividade.
-- [notas de aula de Richard Fitzpatrick - UT/Austin](https://farside.ph.utexas.edu/teaching/jk1/jk1.html)
+- [notas de aula de Richard Fitzpatrick - UT/Austin](https://farside.ph.utexas.edu/teaching/jk1/jk1.html) {cite:p}`Fitzpatrick2015`
     - Excelente texto para um curso clássico de eletromagnetismo. Esta será a abordagem seguida para eletrostática e magnetostática.
-- J. David Jackson, “Classical Electrodynamics”
+- J. David Jackson, “Classical Electrodynamics” {cite:p}`Jackson1998`
     - Excepcional e denso texto clássico, do qual usaremos alguns tópicos selecionados em radiação.
-- A. Zangwill, “Modern Electrodynamics”
+- A. Zangwill, “Modern Electrodynamics” {cite:p}`Zangwill2013`
     - Referência com apresentação moderna e bom nível de rigor. Utilizaremos alguns tópicos específicos e todo material do curso pode ser seguido por aqui.
-- Feynman, Leighton and Sands, “The Feynman Lectures on Physics, Volume II”
+- Feynman, Leighton and Sands, “The Feynman Lectures on Physics, Volume II” {cite:p}`Feynman1963`
     - Apresentação muito bonita de conceitos físicos e aplicações interessantes. Material de referência.
-- S. Cahn, B. Nadgorny, A Guide to Physics Problems - Part 1.
+- S. Cahn, B. Nadgorny, A Guide to Physics Problems - Part 1 {cite:p}`Cahn1994`.
     - Diversos exercícios e soluções coletados de exames de qualificação pelo mundo. 
 ```
 
