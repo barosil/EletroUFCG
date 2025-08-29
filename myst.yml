@@ -37,18 +37,6 @@ project:
     subsection: true
     code: true
     math: true
-    biografia:
-      enabled: true
-    contexto:
-      enabled: true
-    timeline:
-      enabled: true
-    definition:
-      enabled: true
-    theorem:
-      enabled: true
-    example:
-      enabled: true
   exclude:
     - "*QUADRO.*"
 
