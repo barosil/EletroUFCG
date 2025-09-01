@@ -42,9 +42,7 @@ project:
 
   jupyter: 
     binder: true
-
-  
-
+    
   requirements:
     - binder/apt.txt
     - binder/environment.yml
@@ -114,3 +112,11 @@ site:
     - title: Sobre este Livro
       url: /content/frontmatter/about
   
+jupyter:
+  execute: true
+  kernel: eletroufcg
+  timeout: 60
+
+render:
+  code: true
+  output: true

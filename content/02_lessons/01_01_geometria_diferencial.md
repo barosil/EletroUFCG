@@ -621,6 +621,64 @@ dV=|J|\,dr\,d\phi_1\cdots d\phi_{d-1}
 
 Uma **variedade diferencial** $M$ de dimensão $n$ é um espaço topológico que localmente se parece com $\mathbb{R}^n$ e admite um atlas de cartas coordenadas sobre as quais podemos definir funções suaves e derivadas.
 
+:::{figure} ../00_images/02_lessons/manifolds.png
+:name: manifolds_fig
+
+Uma Variedade diferencial e algumas aplicações lineares discutidas no texto abaixo.
+:::
+
+:::{admonition} **Variedade Diferencial**
+Uma variedade diferencial $n$-dimensional $\mathcal{M}$ é um espaço topologicamente Hausdorff, com base contável, localmente homeomorfo a $\mathbb{R^d}$. Sejam $\{U_i\}$ uma coleção de abertos de $\mathcal{M}$ e $\{V_i\}$ abertos de $\mathbb{R^d}$ tais que $\phi: U_i \mapsto V_i$ são os homeomofismos.
+
+- $\phi: U_i \mapsto V_i$: definem as cartas e o sistema de coordenadas.
+- $U_i$é a vizinhança coordenada.
+- $\phi(p)$ são as coordenadas locais do ponto $p$.
+- $\bigcup U_i = \mathcal{M}$: as cartas fazem um cobrimento da variedade.
+- O conjunto de cartas é um atlas.
+:::
+
+:::{exercise}
+:label: s2_etereo
+
+Considere $S^2$ como uma variedade diferencial. Considere duas cartas com a projeção estereográfica, cobrindo toda a variedade.
+:::
+
+Para definir vetores em uma variedade é necessário compreender que os vetores são objetos locais e não globais, formando um espaço vetorial de mesma dimensão, para cada ponto da variedade.
+
+:::{figure} ../00_images/02_lessons/tangent_01.webp
+:name: tangent_fig_01
+Visualizando os espaços tangentes da esfera $S^2$.
+:::
+
+Para realizar esta construção e revelar as suas propriedades, vamos considerar um ponto $p \in \mathcal{M}$ e um conjunto de curvas suaves $\gamma: (-\epsilon, \epsilon) \in \mathbb{R} \mapsto \mathcal{M}$ tais que $\gamma(0) = p$. Este conjunto de curvas na variedade tem coordenadas em $\mathbb{R}^d$ e podemos escrever o vetor tangente a curva no ponto $p$ sem ambiguidade. O que ainda deve ser levado em conta é que muitas curvas passando por $p$ possuem o mesmo vetor tangente, mas esta propriedade é uma relação de equivalência e podemos definir:
+
+:::{admonition} **Espaço Tangente**
+:class: important
+
+$$
+T_pM = \left\{ [\gamma]_p \vert \gamma: (-\epsilon, \epsilon) \in \mathbb{R} \mapsto \mathcal{M} \land \gamma(0) = p \right\}
+$$
+
+:::
+
+:::{figure} ../00_images/02_lessons/tangent_02.webp
+:name: tangent_fig_02
+
+Visualizando os espaços tangentes como a derivada direcional.
+:::
+
+Esta definição é equivalente a dizer que os vetores são operadores lineares que implementam uma diferenciação no espaço das funções suaves sobre $\mathcal{M}$, $\Chi(\mathcal{M})$. A ação dos vetores é dada pela derivada direcional:
+
+$$
+\begin{aligned}
+v_p[f] &= D_{[\gamma]_p} f \\
+&= \left. \frac{\partial (f\circ \gamma)}{\partial t} \right \rvert_{t=0}\\
+&= \left. \frac{\partial (f(x^i(t)))}{\partial t} \right \rvert_{t=0} \\
+&= \left. \frac{\partial f}{\partial x^i}\right \rvert_{\gamma(0)} \left. \frac{\partial x^i}{\partial t} \right \rvert_{t=0} \\
+&= \left. \frac{\partial f}{\partial x^i}\right \rvert_{p} v^i
+\end{aligned}
+$$
+
 O **espaço tangente** $T_pM$ em um ponto $p\in M$ é o espaço vetorial formado pelos vetores tangentes às curvas em $M$ que passam por $p$.  
 
 Em coordenadas locais $(x^1,\dots,x^n)$, uma base de $T_pM$ é
@@ -632,42 +690,49 @@ O **espaço cotangente** $T_p^*M$ é o dual de $T_pM$, isto é, o espaço das fo
 
 A base dual é dada por $\{dx^1|_p, \dots, dx^n|_p\}$, com $dx^i\!\left(\tfrac{\partial}{\partial x^j}\right)=\delta^i_j$.
 
-Uma **métrica Riemanniana** em $M$ é uma família suave de formas bilineares simétricas positivas definidas em cada $T_pM$, isto é, um tensor $(0,2)$:
+:::{admonition} **Tensor**
+:class: important
+
+Seja $L$ um espaço linear n-dimensional e $L^\star$ seu espaço dual. Um tensor de tipo $(p, q)$ é uma aplicação multilinear:
+
 $$
-g_p: T_pM \times T_pM \to \mathbb{R}.
+t: \underbrace{L \times L \cdots \times L \times L^\star}_{q} \underbrace{\times L^\star \cdots \times L^\star}_{p} \mapsto \mathbb{R} \\
+(v_{i_1}, \ldots v_{i_q}; \omega_{j_1}, \ldots \omega_{j_p}) \mapsto t(v_{i_1}, \ldots v_{i_q}; \omega_{j_1}, \ldots \omega_{j_p}) \in \mathbb{R}\\
+t(\ldots v_{i_q} + \lambda w \ldots) = t(\ldots v_{i_q} \ldots) + + \lambda t(\ldots w \ldots)
 $$
 
-Em coordenadas:
+para todas as posições. O espaço vetorial obtido com a coleção destes objetos é o espaço $T_q^p(L)$, e $T_0^0(L) \equiv \mathbb{R}$
+:::
+
+:::{admonition} **p-formas**
+:class: important
+
+Dado o espaço dos tensores $T_p^0(L)$, um tensor $\omega$ é uma p forma se é completamente antisimétrico. A coleção das p-formas forma o espaço vetorial $\Omega^p$.
+
+- $\Omega^0 \equiv \mathbb{R}$
+- $\Omega^1 \equiv T_1^0(\mathbb{M}) \equiv T_p^\star(M)$
+
+Podemos definir uma operação de projeção:
+
 $$
-ds^2 = g_{ij}(x)\, dx^i dx^j.
+\pi^A: T_p^0 \mapsto \Omega^p \\
+(\pi^A t)(v_{i_1},\ldots,v_{i_p}) = \frac{1}{p!}\sum_\sigma t(\sigma(v_{i_1},\ldots,v_{i_p}))
 $$
 
-Seja $F:M\to N$ uma aplicação diferenciável entre variedades. O **pushforward** de um vetor $v\in T_pM$ é
+E agora podemos definir uma estrutura algébrica utilizando o produto exterior:
+
 $$
-F_*:T_pM \to T_{F(p)}N,\qquad
-F_*(v)(f)=v(f\circ F),\quad f\in C^\infty(N).
+\wedge : \Omega^p \times \Omega^q \mapsto \Omega^{p+q} \\
+(\alpha, \wedge) \mapsto \alpha \wedge \beta \\
+\alpha \wedge \beta \equiv \frac{(p+q)!}{p!q!}\pi^A(\alpha \otimes \beta)
 $$
 
-**Exemplo**: Para $F:\mathbb{R}\to\mathbb{R}^2$, $F(t)=(t^2,t^3)$ e $v=\frac{d}{dt}\big|_{t=1}$,
-$$
-F_*(v)=\left(2,3\right)\in T_{(1,1)}\mathbb{R}^2.
-$$
+e pode-se mostrar sem dificuldade que este produto é **bilinear**, **associativo** e $mathbb{Z}$-graduado.
 
-O **pullback** atua sobre formas diferenciais. Dada $F:M\to N$, o pullback
 $$
-F^*: \Omega^k(N) \to \Omega^k(M)
+\alpha \wedge \beta = (-1)^{pq} \beta \alpha.
 $$
-leva uma $k$-forma $\omega$ em $N$ para $F^*\omega$ em $M$, definida por
-$$
-(F^*\omega)_p(v_1,\dots,v_k)=\omega_{F(p)}(F_*v_1,\dots,F_*v_k).
-$$
-
-**Exemplo**: Para $F:\mathbb{R}\to\mathbb{R}^2$, $F(t)=(t^2,t^3)$ e $\omega=x\,dy$,
-$$
-F^*\omega = t^2 \, d(t^3)=3t^4\,dt.
-$$
-
-Uma **$k$-forma diferencial** em $M$ é uma seção alternada de $(T^*M)^{\otimes k}$.  
+:::
 
 Em coordenadas, uma 1-forma é
 $$
@@ -683,12 +748,6 @@ $$
 \dim \Omega^p(M)=\binom{n}{p}.
 $$
 
-Em uma variedade orientada com métrica $g$, a **forma de volume** é
-$$
-\mathrm{vol} = \sqrt{|g|}\, dx^1\wedge\cdots\wedge dx^n,
-$$
-onde $|g|=\det(g_{ij})$.
-
 A **derivada exterior** $d:\Omega^k(M)\to\Omega^{k+1}(M)$ é definida por:
 
 - $d(f)=df=\partial_i f\, dx^i$ para funções,
@@ -700,19 +759,140 @@ $$
 d\alpha = (\partial_x g - \partial_y f)\,dx\wedge dy + (\partial_y h - \partial_z g)\,dy\wedge dz + (\partial_z f - \partial_x h)\,dz\wedge dx.
 $$
 
+-----------
+#### Aplicações de tensores e campos
+
+Dadas duas variedades $\mathcal{M}, \mathcal{N}$, e funções suaves $\chi, \psi, f$ como no diagrama:
+
+$$
+\mathbb{R} \xleftarrow{\chi} \mathcal{M} \xrightarrow{f} \mathcal{N} \xrightarrow{\psi} \mathbb{R},
+$$
+
+Vemos que a aplicação $\psi$ induz uma função sobre $\mathcal{N}:
+
+$$
+\mathcal{M} \xrightarrow{f} \mathcal{N} \xrightarrow{\psi} \mathbb{R} \\
+\psi \circ f: \mathcal{M} \rightarrow \mathbb{R},
+$$
+
+contudo a operação semelhante com a função $\chi$ necessitaria da inversa de $f$ que não assumimos que exista. Nesta situação, vemos que funções são transportadas "seta acima", ou seja, elas são **pulled back**.
+
+Funções são campos tensoriais de tipo $(0,0)$.
+
+:::{admonition} **pullback** de uma função
+:class: important
+
+Seja $f: \mathcal{M} \rightarrow \mathcal{N}$ uma aplicação suave e $\psi : \mathcal{N} \rightarrow \mathbb{R}$ uma função de $\mathcal{N}$.
+
+- $f^\star \psi := \psi \circ f$ induz uma função $f^\star: \mathcal{M} \rightarrow \mathbb{R}$
+- Em coordenadas locais:
+$$
+f: x^i \mapsto y^i \Rightarrow (f^\star \psi)(x) = \psi(y(x))
+$$
+- Para uma composição $\mathcal{M} \xrightarrow{f} \mathcal{N} \xrightarrow{g} \mathcal{S}  $:
+$$
+(g\circ f)^\star = f^\star\circ g^\star
+$$
+
+A aplicação tangente, ou o diferencial, ou ainda o **pushforward** é
+
+$$
+T_x f \equiv f_\star: T_x\mathcal{M} \rightarrow T_{f(x)} \mathcal{N}\\
+f_\star[\gamma] \equiv [f\circ \gamma]\\
+f_\star(V_i\partial_i) = (\frac{\partial y^a}{\partial x^i} V^i) \partial_a
+$$
+
+- Em coordenadas locais:
+$$
+f: x^i \mapsto y^i \Rightarrow (f^\star \psi)(x) = \psi(y(x))
+$$
+- Para uma composição $\mathcal{M} \xrightarrow{f} \mathcal{N} \xrightarrow{g} \mathcal{S}  $:
+$$
+(g\circ f)^\star = f^\star\circ g^\star
+$$
+
+Aplicando isto para o espaço dos covetores:
+
+$$
+f: \mathcal{N} \mapsto \mathcal{N}\\
+f^\star: T^\star_{f(x)}\mathcal{N} \rightarrow T^\star_{f(x)}\mathcal{M}
+\langle f\star \alpha, V\rangle \equiv \langle \alpha, f_\star V\rangle \\
+f^\star dy^a = \frac{\partial y^a}{\partial x^i} dx^i = J^a_i dx^i
+$$
+
+covetores e campos covariantes podem ser propagados usando o **pullback**, definindo campos em variedades derivadas. O procedimento não se generaliza para campos vetoriais. Apenas de $f$ é um **difeomorfismo** podemos propagar os campos vetoriais via **puhforward**.
+:::
+
+#### Métrica
+
+Em uma variedade $\mathcal{M}$ em que consideramos tensores arbitrários $(p, q)$, existe um tensor canônico do tipo $(1, 1) que se constitui no pareamento canônico:
+
+$$
+\hat{\mathbb{1}} \langle V, \alpha \rangle
+\langle \alpha, V \rangle \Rightarrow \hat{\mathbb{1}} \langle V, \cdot \rangle = V, \hat{\mathbb{1}} \langle \cdot, \alpha \rangle = \alpha \\
+\hat{\mathbb{1}} = dx^i\otimes \partial_j \Rightarrow \hat{\mathbb{1}}^1_j = \delta^i_ j
+$$
+
+Um tensor $(0,2)$ positivo definido define uma métrica riemanniana na variedade, com a qual é possível construir:
+- Produto interno de vetores
+- Elemento de Linha
+- Isomorfismos musicais
+- Abaixamento e levantamento de índices (via isomorfismos musicais)
+- Forma de volume (acrescida de uma orientação)
+
+:::{admonition} **Métrica e Propriedades**
+:class: important
+
+$$
+\begin{aligned}
+g \in \mathcal{T}^0_2 &\Rightarrow g: T_p\mathcal{M} \times T_p\mathcal{M} \mapsto \mathbb{R}\\
+g(U, V) = g(V, U) \;&\land g(U, U) \ge 0 \; \land g(U, U)=0 \Leftrightarrow U \equiv 0 \\
+g(U, V) &= (g_{ij} dx^i\otimes dx^j )(U^k\partial_k, V^l\partial_l) \\
+&= g_{ij} U^k V^l (dx^i \otimes \partial_k) (dx^i \otimes \partial_k) \\
+&= g_{ij} U^k V^l \delta^i_k \delta^j_l = g_{ij} U^i V^j\\
+\flat_g: T_p\mathcal{M} &\mapsto T^\star_p\mathcal{M}\\
+\flat_g (V^i\partial_i) &= g_{ij} V^j dx^i = V_i dx^i \\
+\sharp_g: T^\star_p\mathcal{M} &\mapsto T_p\mathcal{M}\\
+\sharp_g (\omega_i dx^i) &= g^{ij} \omega_i \partial_i = \omega^i \partial_i \\
+g_{ij}(x) &= \langle \partial_i, \partial_j \rangle \\
+&= \langle \frac{\partial x'^r}{\partial x^i} \partial'_r, \frac{\partial x'^s}{\partial x^j}\partial'_s\rangle \Rightarrow\\
+g_{ij} &= \frac{\partial x'^r}{\partial x^i}\frac{\partial x'^r}{\partial x^i} g'_{rs} \\
+ds^2 &= g_{ij} dx^i dx^j
+\end{aligned}
+$$
+:::
+
+:::{figure} ../00_images/02_lessons/maps.webp
+:name: maps_fig_01
+
+Visualizando os espaços tangentes, cotangente, pullback, pushforward e isomorfismos musicais.
+:::
+
+Em uma variedade orientada com métrica $g$, a **forma de volume** é
+$$
+\mathrm{vol} = \sqrt{|g|}\, dx^1\wedge\cdots\wedge dx^n,
+$$
+onde $|g|=\det(g_{ij})$.
+
+:::{admonition} **Operador de Hodge**
+:class: important
+Seja um espaço linear n-dimensional $L$ dotado de uma métrica $g$ e uma orientação $o$. Seja $\omega \equiv \omega_{g,o}$ a correspondente forma de volume. O Operador de Hodge é:
+$$
+\alpha \mapsto \star\alpha, \quad \alpha \in \Omega^pL, \quad \star \alpha \in \Omega^{n-p}L \\
+\star \alpha_{i_1\ldots i_p} := \frac{1}{p!}\alpha^{i_{p+1}\ldots i_{n}}\omega_{i_1\ldots i_p\;i_{p+1}\ldots i_{n}}\\
+\star_g \mathbb{1} = \omega_g \\
+\star \omega_g = \mathrm{sign}\;g \\
+\star_g \star_g = \mathrm{sign}\;g (-1)^{p(n-p)}\\
+\alpha \wedge \star_g \beta = \langle \alpha, \beta \rangle_g\; \omega_g
+$$
+:::
+
 A **coderivada** $\delta:\Omega^k(M)\to\Omega^{k-1}(M)$ é definida via o Hodge:
 $$
 \delta = (-1)^{n(k+1)+1} d.
 $$
 
 Ela é o adjunto formal da derivada exterior em relação ao produto interno definido pela métrica.
-
-O **dual de Hodge** $*:\Omega^k(M)\to\Omega^{n-k}(M)$ depende da métrica e da orientação.  
-
-Em $\mathbb{R}^3$ com métrica euclidiana e base $\{dx,dy,dz\}$:
-$$
-*dx=dy\wedge dz,\quad*dy=dz\wedge dx,\quad *dz=dx\wedge dy.
-$$
 
 O **Laplaciano de Hodge** é
 $$
@@ -724,13 +904,20 @@ $$
 \Delta f = \sum_{i=1}^n \partial_i^2 f.
 $$
 
+Os operadores diferenciais usuais em 3 dimensões podem ser definidos de forma simples com este formalismo:
+
+:::{figure} ../00_images/02_lessons/3dops.png
+:name: 3dops_fig_01
+:::
+
 - **Gradiente**:
 $$
-   f \;(\text{0-forma}) \xrightarrow{\,d\,} df\;(\text{1-forma}) \xrightarrow{\,\#\,} \nabla f\;(\text{vetor}).
-   $$
-
-$$
-\nabla f = (df)^\sharp = \sum_i \frac{1}{h_i}\frac{\partial f}{\partial u^i}\, \hat e_i.
+\begin{aligned}
+   f \in \Chi(\mathcal{M}) \cong \Omega^0 &\xrightarrow{\,d\,} df \in \Omega^1 \xrightarrow{\,\#\,} \nabla f \in T_p\mathcal{M}. \\
+   \nabla: \Chi(\mathcal{M}) &\mapsto T_p\mathcal{M} \\
+   \nabla f &= (df)^\sharp \\
+   &=\sum_i \frac{1}{h_i}\frac{\partial f}{\partial u^i}\, \hat e_i.
+\end{aligned}
 $$
 
 - **Divergente**:
@@ -771,3 +958,5 @@ $$
 \sum_i \frac{\partial}{\partial u^i}
 \Bigg( \frac{h_1 h_2 h_3}{h_i^2} \frac{\partial f}{\partial u^i} \Bigg) = \frac{1}{\sqrt{|g|}} \partial_i\!\Bigl(\sqrt{|g|}\, g^{ij}\partial_j f\Bigr).
 $$
+
+Vamos utilizar este poderoso formalismo para revelar a estrutura íntima das equações de Maxwell.
