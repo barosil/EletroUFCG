@@ -1,5 +1,12 @@
 # Fibrados
 
+:::{figure} ../00_images/02_lessons/toro.png
+:name: equivariance
+:align: center
+:width: 100%
+
+:::
+
 Seja $M$ uma variedade e $T_xM$ o espaço tangente a $M$ no ponto $x$.  
 
 Considere o objeto  
@@ -97,6 +104,13 @@ $$
 ---
 
 # Fibração de Hopf: Um Exemplo Ilustrativo em Teoria de Fibrados
+
+:::{figure} ../00_images/02_lessons/hopf.jpg
+:name: hopf
+:align: center
+:width: 100%
+
+:::
 
 ## 1. Introdução à Fibração de Hopf
 
